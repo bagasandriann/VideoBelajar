@@ -1,0 +1,2 @@
+# VideoBelajar
+VideoBelahar adalah platform edutech berbasis web yang menyediakan kumpulan video course on demand untuk membantu customer belajar secara mandiri, fleksibel, dan sesuai kebutuhan mereka. Melalui aplikasi ini, pengguna dapat mendaftar akun, masuk ke platform, lalu mengakses berbagai materi pembelajaran dalam bentuk video yang dapat ditonton kapan saja. Bootcamp Fullstack Developer by Harisenin.com
