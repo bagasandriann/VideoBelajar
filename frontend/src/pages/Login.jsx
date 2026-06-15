@@ -7,7 +7,7 @@ function Login() {
     <main className="min-h-screen bg-[#FFFDF3]">
       <Header />
 
-      <section id="login-section" className="flex min-h-[calc(100vh-80px)] items-center justify-center px-6">
+      <section id="login-section" className="flex min-h-[calc(100vh-80px)] items-center justify-center px-6 py-10">
         <div id="login-card" className="w-full max-w-[520px] rounded bg-white border border-gray-200 px-8 py-7">
           <div className="text-center">
             <h1 className="text-2xl font-bold text-[#222325]">
@@ -32,7 +32,7 @@ function Login() {
           </div>
           <div className="mt-6">
             <label htmlFor="fpassword" className="text-sm text-gray-700">
-              Password <span className="text-red-500">*</span>
+              Kata Sandi <span className="text-red-500">*</span>
             </label>
 
             <div className="relative mt-2">
@@ -51,7 +51,7 @@ function Login() {
               </button>
             </div>
           </div>
-          <div className="mt-2 flex justify-end">
+          <div className="my-3 flex justify-end">
             <a href="http://localhost:5173/register" className="text-sm font-medium text-gray-700 hover:text-green-600">Lupa Password?</a>
           </div>
           <div className="mt-6">

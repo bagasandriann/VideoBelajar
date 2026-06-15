@@ -1,11 +1,180 @@
+import Header from '../components/Header'
+import eyeIcon from '../assets/mdi_eye-off.svg'
+import googleIcon from '../assets/logos_google-icon.svg'
+import idFlag from '../assets/id.svg'
+import sgFlag from '../assets/sg.svg'
+import thFlag from '../assets/th.svg'
+import { useState } from 'react'
+
 function Register() {
+  const phoneCountries = [
+    {
+      code: '+62',
+      label: 'Indonesia',
+      flag: idFlag
+    },
+    {
+      code: '+65',
+      label: 'Singapore',
+      flag: sgFlag
+    },
+    {
+      code: '+66',
+      label: 'Thailand',
+      flag: thFlag
+    },
+  ]
+
+  const [selectedPhoneCode, setSelectedPhoneCode] = useState(phoneCountries[0].code)
+  const selectedCountry = phoneCountries.find((country) => country.code === selectedPhoneCode)
+
   return (
-    <main className="min-h-screen bg-[#f7f3ef] flex items-center justify-center px-6">
-      <section className="text-center">
-        <h1 className="text-4xl font-bold text-[#f64920]">VideoBelajar</h1>
-        <p className="mt-3 text-lg text-slate-700">
-          Ini halaman Register.
-        </p>
+    <main className="min-h-screen bg-[#FFFDF3]">
+      <Header />
+
+      <section id="login-section" className="flex min-h-[calc(100vh-80px)] items-center justify-center px-6 py-10">
+        <div id="login-card" className="w-full max-w-[520px] rounded bg-white border border-gray-200 px-8 py-7">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-[#222325]">
+              Pendaftaran Akun
+            </h1>
+
+            <p className="mt-2 text-sm text-gray-500">
+              Yuk, daftarkan akunmu sekarang juga!
+            </p>
+          </div>
+          <div className="mt-6">
+            <label htmlFor="fnamalengkap" className="text-sm text-gray-700">
+              Nama Lengkap <span className="text-red-500">*</span>
+            </label>
+
+            <input
+              type="text"
+              id="fnamalengkap"
+              name="namalengkap"
+              className="mt-2 w-full rounded border border-gray-200 px-3 py-2 text-sm outline-none"
+            />
+          </div>
+          <div className="mt-6">
+            <label htmlFor="femail" className="text-sm text-gray-700">
+              E-Mail <span className="text-red-500">*</span>
+            </label>
+
+            <input
+              type="email"
+              id="femail"
+              name="email"
+              className="mt-2 w-full rounded border border-gray-200 px-3 py-2 text-sm outline-none"
+            />
+          </div>
+          <div className="mt-6">
+            <label htmlFor="fnohp" className="text-sm text-gray-700">
+              No. Hp <span className="text-red-500">*</span>
+            </label>
+
+            <div className="mt-2 flex gap-4">
+              <div className="flex w-[200px] overflow-hidden rounded border border-gray-200">
+                <div className="flex w-25 items-center justify-center bg-gray-100">
+                  <img
+                    src={selectedCountry.flag}
+                    alt={selectedCountry.label}
+                    className="block h-5 w-6 object-cover"
+                  />
+                </div>
+
+                <select
+                  id="fkodehp"
+                  name="kodehp"
+                  value={selectedPhoneCode}
+                  onChange={(event) => setSelectedPhoneCode(event.target.value)}
+                  className="w-full bg-white px-3 py-2 text-sm outline-none"
+                >
+                  {phoneCountries.map((country) => (
+                    <option key={country.code} value={country.code}>
+                      {country.code}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <input
+                type="tel"
+                id="fnohp"
+                name="nohp"
+                className="w-full rounded border border-gray-200 px-3 py-2 text-sm outline-none"
+              />
+            </div>
+          </div>
+          <div className="mt-6">
+            <label htmlFor="fpassword" className="text-sm text-gray-700">
+              Kata Sandi <span className="text-red-500">*</span>
+            </label>
+
+            <div className="relative mt-2">
+              <input
+                type="password"
+                id="fpassword"
+                name="fpassword"
+                className="w-full rounded border border-gray-200 px-3 py-2 pr-10 text-sm outline-none"
+              />
+
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+              >
+                <img src={eyeIcon} alt="Toggle Password Visibility" className="h-5 w-5" />
+              </button>
+            </div>
+            <div className="mt-6">
+              <label htmlFor="fkonfirmasipassword" className="text-sm text-gray-700">
+                Konfirmasi Kata Sandi <span className="text-red-500">*</span>
+              </label>
+
+              <div className="relative mt-2">
+                <input
+                  type="password"
+                  id="fkonfirmasipassword"
+                  name="fpassword"
+                  className="w-full rounded border border-gray-200 px-3 py-2 pr-10 text-sm outline-none"
+                />
+
+                <button
+                  type="button"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500"
+                >
+                  <img src={eyeIcon} alt="Toggle Password Visibility" className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+            <div className="my-3 flex justify-end">
+              <a href="http://localhost:5173/register" className="text-sm font-medium text-gray-700 hover:text-green-600">Lupa Password?</a>
+            </div>
+            <div className="mt-6">
+              <button id="register-button" className="w-full rounded-lg bg-green-600 px-3 py-2 text-sm font-medium text-white hover:bg-green-700">
+                Daftar
+              </button>
+            </div>
+            <div className="mt-2">
+              <button id="login-button" className="w-full rounded-lg bg-green-200 px-3 py-2 text-sm font-medium text-green-700 hover:bg-green-300">
+                Masuk
+              </button>
+            </div>
+            <div className="my-5 flex items-center gap-3">
+              <div className="h-px flex-1 bg-gray-200"></div>
+              <span className="text-sm text-gray-500">atau</span>
+              <div className="h-px flex-1 bg-gray-200"></div>
+            </div>
+            <div className="mt-2">
+              <button
+                id="google-login-button"
+                className="flex w-full items-center justify-center gap-2 rounded-lg bg-white border border-gray-300 px-3 py-2 text-sm font-medium hover:bg-gray-50"
+              >
+                <img src={googleIcon} alt="Google Icon" className="h-5 w-5" />
+                <span>Masuk dengan Google</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   )
