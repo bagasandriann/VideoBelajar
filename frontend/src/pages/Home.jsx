@@ -1,4 +1,4 @@
-function App() {
+function Home() {
   return (
     <main className="min-h-screen bg-[#f7f3ef] flex items-center justify-center px-6">
       <section className="text-center">
@@ -11,4 +11,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
