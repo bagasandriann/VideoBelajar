@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26f72b7b-b99e-41d3-bfbb-509f3184033c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/Register.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="26f72b7b-b99e-41d3-bfbb-509f3184033c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +28,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Project/VideoBelajar",
+    "last_opened_file_path": "D:/Project/video.com test",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
