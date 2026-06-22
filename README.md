@@ -1,33 +1,46 @@
-# VideoBelajar
+﻿# VideoBelajar
 
-VideoBelajar is a web-based edutech landing page project that provides an on-demand video course interface. This project was built as part of the Fullstack Developer Bootcamp by Harisenin.com.
+VideoBelajar is a web-based edutech project that provides an on-demand video course interface. This project was built as part of the Fullstack Developer Bootcamp by Harisenin.com.
 
-The current implementation uses plain HTML, CSS, and a small amount of vanilla JavaScript. No JavaScript framework or build tool is required.
+The current implementation uses a React frontend built with Vite. The backend folder exists, but it has not been implemented yet.
 
 ## Tech Stack
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Static assets: PNG, JPG, and SVG
+- React 19
+- Vite 8
+- React Router DOM 7
+- Tailwind CSS 4
+- JavaScript
+- ESLint
 
 ## Pages
 
-- `index.html` - Homepage / landing page
-- `login.html` - Login page
-- `register.html` - Register page
+The app currently has three frontend routes:
 
-## Features
+```text
+/          Homepage / landing page
+/login     Login page
+/register  Register page
+```
 
-- Responsive homepage layout
-- Responsive header
-- Hero section
-- Featured course cards
-- Newsletter / call to action section
-- Footer section
-- Login form slicing
-- Register form slicing
-- Country flag switcher on the register phone code field using vanilla JavaScript
+Current page coverage:
+
+- Homepage
+  - Responsive header
+  - Hero section
+  - Featured course section
+  - Course cards
+  - Newsletter / call to action section
+  - Footer
+- Login page
+  - Login form slicing
+  - Password field with eye icon
+  - Google login button UI
+- Register page
+  - Register form slicing
+  - Phone number field with country code selector
+  - Password and confirm password fields
+  - Google register button UI
 
 ## Project Structure
 
@@ -36,74 +49,96 @@ VideoBelajar/
 |-- backend/
 |-- docs/
 |   `-- design/
-|-- vanilla/
-|   |-- assets/
-|   |-- css/
-|   |   |-- login.css
-|   |   |-- register.css
-|   |   `-- style.css
-|   |-- index.html
-|   |-- login.html
-|   `-- register.html
+|-- frontend/
+|   |-- public/
+|   |-- src/
+|   |   |-- assets/
+|   |   |-- components/
+|   |   |   |-- CourseCard.jsx
+|   |   |   |-- Footer.jsx
+|   |   |   `-- Header.jsx
+|   |   |-- pages/
+|   |   |   |-- Home.jsx
+|   |   |   |-- Login.jsx
+|   |   |   `-- Register.jsx
+|   |   |-- App.jsx
+|   |   |-- index.css
+|   |   `-- main.jsx
+|   |-- package.json
+|   `-- vite.config.js
 `-- README.md
 ```
 
-Note: the `backend` folder is currently empty. The active submission is inside the `vanilla` folder.
+Notes:
+
+- `frontend` contains the active React application.
+- `backend` is currently empty.
+- `docs/design` contains design references.
 
 ## How to Run
 
-No installation is required.
+Make sure Node.js and npm are installed:
 
-Open the HTML files directly in your browser:
-
-```text
-vanilla/index.html
-vanilla/login.html
-vanilla/register.html
+```bash
+node -v
+npm -v
 ```
 
-On Windows PowerShell, you can run:
+Install dependencies:
 
-```powershell
-start .\vanilla\index.html
-start .\vanilla\login.html
-start .\vanilla\register.html
+```bash
+cd frontend
+npm install
 ```
 
-You can also use the Live Server extension in VS Code:
+Run the development server:
 
-1. Open the project folder in VS Code.
-2. Right-click one of the HTML files inside `vanilla`.
-3. Select `Open with Live Server`.
-
-## Styling Files
-
-- `vanilla/css/style.css` is used by the homepage.
-- `vanilla/css/login.css` is used by the login page.
-- `vanilla/css/register.css` is used by the register page.
-
-The CSS files are intentionally separated so each page can be reviewed or committed independently.
-
-## JavaScript
-
-The register page includes a small inline vanilla JavaScript script to update the country flag when the phone country code changes.
-
-No external JavaScript library is used.
-
-## Design Reference
-
-Design references are stored in:
-
-```text
-docs/design
+```bash
+npm run dev
 ```
 
-Assets used by the static pages are stored in:
+Open the local URL shown in the terminal. By default, Vite commonly runs at:
 
 ```text
-vanilla/assets
+http://localhost:5173
+```
+
+Build the frontend:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+Run linting:
+
+```bash
+npm run lint
 ```
 
 ## Status
 
-This project is currently in the static frontend slicing stage. Real authentication, API integration, form validation, and course filtering have not been implemented yet.
+This project is currently in the frontend slicing stage.
+
+Implemented:
+
+- React app structure
+- Homepage UI
+- Login page UI
+- Register page UI
+- Static assets
+- Client-side routing
+
+Not implemented yet:
+
+- Backend API
+- Real authentication
+- Form validation
+- Course filtering logic
+- Dynamic course data
+- User session handling
